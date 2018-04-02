@@ -747,6 +747,7 @@ public class XcodeBuild extends AbstractBaseTask {
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
         addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
+        addConvention(CONVENTION_PROVISIONING_PROFILE_SPECIFIER, ext.signing::getProvisioningProfileSpecifier);
         addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
             if (!ext.signing.usesDefaultDevelopmentTeam()) {
